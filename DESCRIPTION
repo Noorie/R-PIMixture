@@ -1,0 +1,44 @@
+Package: PIMixture
+Title: Prevalence Incidence Mixture Models
+Version: 0.4.0
+Date: 2019-02-05
+Authors: c( person(c("Li","C."), "Cheung", email = "li.cheung@nih.gov",
+        role = c("aut", "cre")), person(c("Noorie"), "Hyun", email =
+        "nhyun@mcw.edu", role = c("aut", "cre")), person(c("Xiaoqin"),
+        "Xiong", role = c("aut")), person(c("Qing"), "Pan", role =
+        "aut", person(c("Hormuzd","A."), "Katki", role = "aut" )
+Author: Li C. Cheung [aut, cre],
+        Noorie Hyun [aut, cre],
+        Xiaoqin Xiong [aut],
+        Qing Pan [aut],
+        Hormuzd A. Katki [aut]
+Maintainer: Li C. Cheung <li.cheung@nih.gov>,
+ Noorie Hyun <noorie.hyun@nih.gov>
+Description: This package fits Prevalence Incidence Mixture models to data for which the time to event is interval censored or
+  for which the event is prevalent at the time zero but is only partially observed.  Such data often arises in medical screening 
+  for asymptomatic disease or disease precursors, such as precancerous lesions.  In such data, 1) onset of incident disease occurs
+  between screening visits (interval-censoring), 2) the disease may have already occurred before the initial screen (prevalent at time zero)
+  but may be initially missed and found some time after the initial screen.  These models estimates absolute and relative risks.
+  Semi-parametric, weakly-parametric (integrated B-splines), and fully parametric members of the Prevalence-Incidence Mixture model 
+  family are supported.  A non-parametric estimator is provided and is useful for checking parametric assumptions of fully parametric 
+  Prevalence Incidence Mixture models.  Only weakly-parametric and semi-parametric models (no variance calculation) currently support 
+  stratified random samples in two frames: a superpopulation and a finite population (where cases and controls at time zero can be a stratum factor).
+  A later version will add this functionality for the logistic-Weibull and logistic-exponential models. 
+  Semi-parametric, weakly-parametric models, logistic-Weibull, and logistic-exponential uses a logistic regression model as the prevalence model 
+  and a proportion hazard survival model as the incidence model.  The semi-parametric model makes no assumptions regarding the baseline hazard function.  
+  However, it can be computationally expensive.  The weakly-parametric model approximates the bazeline hazard function using 
+  integrated B-splines and is faster.  When parametric assumptions can be made, the fully parametric models are fastest.
+  The following parametric assumptions are supported: logistic-Weibull, logistic-exponential, logistic-lognormal,
+  logistic-loglogistic, logistic-gengamma, and logistic-gamma.  Variance estimates are available only for the weakly-parametric,
+  logistic-Weibull, logistic-exponential, and non-parametric.  For the non-parametric, this is achieved through boot-strapping by setting
+  the conf.int parameter to "TRUE" and can be very computationally expensive.  
+  For identifiability of the mixture model, the data must contained observed prevalent disease and interval-censored incident disease.
+Depends: R (>= 3.4.4)
+Imports: survival, optimx, fdrtool, interval, Icens
+License: GPL-2
+LazyData: true
+RoxygenNote: 6.1.1
+NeedsCompilation: no
+Packaged: 2019-02-19 16:42:17 UTC; cheunglc
+Encoding: UTF-8
+Built: R 3.4.4; ; 2019-02-19 16:42:18 UTC; unix
