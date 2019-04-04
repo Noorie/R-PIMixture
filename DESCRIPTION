@@ -1,12 +1,13 @@
 Package: PIMixture
 Title: Prevalence Incidence Mixture Models
 Version: 0.4.0
-Date: 2019-02-05
+Date: 2019-04-04
 Authors: c( person(c("Li","C."), "Cheung", email = "li.cheung@nih.gov",
         role = c("aut", "cre")), person(c("Noorie"), "Hyun", email =
-        "nhyun@mcw.edu", role = c("aut", "cre")), person(c("Xiaoqin"),
-        "Xiong", role = c("aut")), person(c("Qing"), "Pan", role =
-        "aut", person(c("Hormuzd","A."), "Katki", role = "aut" )
+        "nhyun@mcw.edu", role = c("aut", "cre")),
+        person(c("Xiaoqin"), "Xiong", role = c("aut")),
+        person(c("Qing"), "Pan", role = "aut",
+        person(c("Hormuzd","A."), "Katki", role = "aut" )
 Author: Li C. Cheung [aut, cre],
         Noorie Hyun [aut, cre],
         Xiaoqin Xiong [aut],
@@ -34,11 +35,10 @@ Description: This package fits Prevalence Incidence Mixture models to data for w
   the conf.int parameter to "TRUE" and can be very computationally expensive.  
   For identifiability of the mixture model, the data must contained observed prevalent disease and interval-censored incident disease.
 Depends: R (>= 3.4.4)
-Imports: survival, optimx, fdrtool, interval, Icens
+Imports: survival, optimx, fdrtool, interval, Icens, plyr
 License: GPL-2
 LazyData: true
 RoxygenNote: 6.1.1
 NeedsCompilation: no
-Packaged: 2019-02-19 16:42:17 UTC; cheunglc
+Packaged: 2019-02-05 19:00:00 UTC; cheunglc
 Encoding: UTF-8
-Built: R 3.4.4; ; 2019-02-19 16:42:18 UTC; unix
